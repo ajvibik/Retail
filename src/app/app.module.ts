@@ -8,6 +8,8 @@ import { RegisterComponent } from './login/register/register.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ROUTING } from './app.routing';
+import { LayoutComponent } from './layout/layout.component'
 
 @NgModule({
   declarations: [
@@ -15,14 +17,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent
+    SidebarComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
