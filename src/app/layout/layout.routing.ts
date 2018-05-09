@@ -13,4 +13,4 @@ export const layoutRoutes: Routes = [
     
 ];
  
-export const ROUTING: ModuleWithProviders = RouterModule.forRoot(layoutRoutes);
+export const LAYOUT_ROUTING: ModuleWithProviders = RouterModule.forRoot(layoutRoutes);
