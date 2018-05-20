@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   ProjectName = "boltzmann"
-  events: string[] = [];
-  opened: boolean;
-
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
-
+  user = {
+    "userName":"Admin",
+    "Loation":"Chennai"
+  }
   constructor() { }
 
   ngOnInit() {

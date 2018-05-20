@@ -1,56 +1,23 @@
-
-
-
-<!-- <div class="col-md-6 col-md-offset-3">
-        <h2>Login</h2>
-        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-            </div>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-            </div>
-            <div class="form-group">
-                <button [disabled]="loading" (click)="loginVerify(user)" class="btn btn-primary">Login</button>
-                  <a [routerLink]="['/register']" class="btn btn-link">Register</a> 
-                <a class="btn btn-link">Register</a>
-            </div>
-        </form>
-    </div> -->
-
-
-    <div class="login-page" [@routerTransition]>
-        <div class="row justify-content-md-center">
-            <div class="col-md-4">
-                <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-                <h1>SB Admin BS4 Angular5</h1>
-                <form role="form">
-                    <div class="form-content">
-                        <div class="form-group">
-                            <input type="text" ng-model="model.name" class="form-control input-underline input-lg" id="" placeholder="Email">
-                        </div>
-    
-                        <div class="form-group">
-                            <input type="password" ng-model="model.password" class="form-control input-underline input-lg" id="" placeholder="Password">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Agent</label>
-                            <select ng-model="model.agentDetail" class="form-control form-control-lg rounded-0" id="agent" >
-                                <option value="">-----Select-----</option>
-                                <option *ngFor="let agent of agents" value="agent.code">{{agent.value}}</option>
-                            </select>
-                            <div class="invalid-feedback">Enter your Agent too!</div>
-                        </div>
-                    </div>
-                    <a class="btn rounded-btn" [routerLink]="['/layout']" (click) ="loginVerify(model)"> Log in </a>
-                    &nbsp;
-                    <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
-                </form>
-            </div>
+<div class="container">
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card grey lighten-2">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width tabs-transparent">
+            <li class="tab">
+              <a routerLink='/login' routerLinkActive='active'>Sign In</a>
+            </li>
+            <li class="tab">
+              <a  routerLink='/signup' routerLinkActive='active'>Sign Up</a>
+            </li>
+          </ul>
         </div>
+        <div class="card-content white">
+          <div class="row">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>

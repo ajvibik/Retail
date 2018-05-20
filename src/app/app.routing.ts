@@ -1,21 +1,23 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './login/register/register.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { LayoutComponent } from './layout/layout.component'
+import { SignInComponent } from './login/sign-in/sign-in.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth/auth.guard';
 
-
- 
 export const AppRoutes: Routes = [
-    { path: '', component: LoginComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'header', component: HeaderComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'sidebar', component: SidebarComponent },
-    { path: 'layout', component: LayoutComponent },
-    { path:'**', component: LoginComponent}
+    { path: 'home', component: HomeComponent,canActivate:[AuthGuard] },
+    {
+        path: 'signup', component: LoginComponent,
+        children: [{ path: '', component: RegisterComponent }]
+    },
+    {
+        path: 'login', component: LoginComponent,
+        children: [{ path: '', component: SignInComponent }]
+    },
+    { path : '', redirectTo:'/login', pathMatch : 'full'},
+    { path:'**', component: LoginComponent},
     
 ];
  
