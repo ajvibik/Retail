@@ -1,4 +1,4 @@
-<div *ngIf="isLoginError" class="red-text center error-message">
+<!-- <div *ngIf="isLoginError" class="red-text center error-message">
   <i class="material-icons">error</i> Incorrect username or password
 </div>
 <form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
@@ -19,11 +19,11 @@
         <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
       </div>
     </div>
-</form>
+</form> -->
 
 
 <!--Sign In card-->
-    <div class="row center">
+    <div class="row center bgProperty">
         <!--Branding logo-->
         <div class="col s12 center-align center" style="margin-top: 1%">
             <img src="https://avatars2.githubusercontent.com/u/4076925?s=460&v=4" alt="App Logo" class="responsive-img z-depth-3"
@@ -34,42 +34,28 @@
                  style=" margin : 0px; padding : 2px">
 
                 <!--Login fields-->
-                <form ng-submit="authenticateUser()">
+                <form #loginForm="ngForm"  (ngSubmit)="OnSubmit(UserName.value,Password.value)">
                 <div class="card-content" >
                     <div class="row center-align">
                         <span class="card-title grey-text text-darken-4 center-align">Sign In</span>
 
                         <div class="input-field col s12">
                             <i class="material-icons prefix center">account_circle</i>
-                            <input 
-                                    ng-model="user.email"
-                                    id="email"
-                                    type='email'
-                                    name='email'
-                                    class="validate left-align"
-                                    required="true"
-                                    />
-                            <label for="email"
-                                    class="left-align">Enter your email
+                            <input type="text" #UserName ngModel name="UserName"  required>
+                            <label for="UserName"
+                                    class="left-align">Enter your User Name
                             </label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix center">dialpad</i>
-                            <input
-                                    ng-model="user.password"
-                                    type='password'       
-                                    id='password'
-                                    class="validate"
-                                    required="true"
-                                   />
+                            <input type="password" #Password ngModel name="Password" required>
 
                             <label for="password"
                                    class=" left-align">Enter your password
                             </label>
                         </div>
                     </div>
-                  
-                   <button put type="submit" class="waves-effect waves-light btn">LogIn <i class="material-icons right">send</i>
+                   <button  type="submit" [disabled]="!loginForm.valid" class="waves-effect waves-light btn">LogIn <i class="material-icons right">send</i>
                    </button>
                   
                 </div>

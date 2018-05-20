@@ -1,5 +1,5 @@
 .bgProperty{
-      background-image: url(https://pas-wordpress-media.s3.amazonaws.com/wp-content/uploads/2014/02/8-Tips-For-Getting-into-Retail-Channels.jpg);
+      /*background-image: url(../assets/Retail-BG.jpg);*/
        /* Full height */
     height: 100%; 
 
@@ -7,4 +7,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.row {
+    display: inherit;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
