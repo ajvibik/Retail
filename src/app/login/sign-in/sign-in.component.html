@@ -20,3 +20,60 @@
       </div>
     </div>
 </form>
+
+
+<!--Sign In card-->
+    <div class="row center">
+        <!--Branding logo-->
+        <div class="col s12 center-align center" style="margin-top: 1%">
+            <img src="https://avatars2.githubusercontent.com/u/4076925?s=460&v=4" alt="App Logo" class="responsive-img z-depth-3"
+                 style="width:100px ; height :100px; border-radius:50px"/>
+        </div>
+        <div class="col s12 m10 offset-m1 l6 offset-l3">
+            <div class="card sticky-action z-depth-4 card-panel hoverable"
+                 style=" margin : 0px; padding : 2px">
+
+                <!--Login fields-->
+                <form ng-submit="authenticateUser()">
+                <div class="card-content" >
+                    <div class="row center-align">
+                        <span class="card-title grey-text text-darken-4 center-align">Sign In</span>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix center">account_circle</i>
+                            <input 
+                                    ng-model="user.email"
+                                    id="email"
+                                    type='email'
+                                    name='email'
+                                    class="validate left-align"
+                                    required="true"
+                                    />
+                            <label for="email"
+                                    class="left-align">Enter your email
+                            </label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix center">dialpad</i>
+                            <input
+                                    ng-model="user.password"
+                                    type='password'       
+                                    id='password'
+                                    class="validate"
+                                    required="true"
+                                   />
+
+                            <label for="password"
+                                   class=" left-align">Enter your password
+                            </label>
+                        </div>
+                    </div>
+                  
+                   <button put type="submit" class="waves-effect waves-light btn">LogIn <i class="material-icons right">send</i>
+                   </button>
+                  
+                </div>
+              </form>
+                </div>
+                </div>
+                </div>
