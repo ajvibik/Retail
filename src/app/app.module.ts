@@ -12,10 +12,11 @@ import { FooterComponent } from './home/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './login//sign-in/sign-in.component';
 import { ToastrModule } from 'ngx-toastr';
-import { AuthInterceptor } from './auth/auth.interceptor';
-import { AuthGuard } from './auth/auth.guard';
+//import { AuthInterceptor } from './auth/auth.interceptor';
+//import { AuthGuard } from './auth/auth.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './login//shared/user.service';
+import { SalesComponent } from './home/contentPages/pos/sales/sales.component';
 
 
 
@@ -27,7 +28,8 @@ import { UserService } from './login//shared/user.service';
     RegisterComponent,
     FooterComponent,
     HomeComponent,
-    SignInComponent
+    SignInComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,16 +38,20 @@ import { UserService } from './login//shared/user.service';
     MaterialModule,
     BrowserAnimationsModule,
     ROUTING,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     HttpClientModule
   ],
-  providers: [UserService,AuthGuard,
-    ,
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass : AuthInterceptor,
-      multi : true
-    }],
+  // providers: [UserService,AuthGuard,
+  //   ,
+  //   {
+  //     provide : HTTP_INTERCEPTORS,
+  //     useClass : AuthInterceptor,
+  //     multi : true
+  //   }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

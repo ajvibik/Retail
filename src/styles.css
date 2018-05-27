@@ -1,8 +1,10 @@
 
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 @import "~bootstrap/dist/css/bootstrap.css";
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* @import  'assets/css/sb-admin.css'; */
 
-body {
+/* body {
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
@@ -21,12 +23,11 @@ input.ng-invalid.ng-dirty{
     border-bottom-color : #e91e63 !important;
     box-shadow: 0 1px 0 0 #e91e63 !important;
 }
-/*for error div i*/
+
 div.error-message i{
     vertical-align: middle !important;
 }
  
-/*for tab control*/
 .tabs{
     height: 65px;
 }
@@ -42,4 +43,7 @@ div.error-message i{
  
 .tabs .tab a.active{
     background-color: #fff !important;
-}
+} */
+
+
+  

@@ -29,10 +29,11 @@ export class UserService {
   userAuthentication(userName, password) {
     var data = "username=" + userName + "&password=" + password + "&grant_type=password";
     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
-    return this.http.post(this.rootUrl + '/users/login', data, { headers: reqHeader });
+    return this.http.post(this.rootUrl + '/token/login1', data,{headers : reqHeader});
   }
 
   getUserClaims(){
-   return  this.http.get(this.rootUrl+'/users/login');
+   return  this.http.get(this.rootUrl+'/users/Register');
   }
+
 }

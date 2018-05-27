@@ -34,8 +34,8 @@
                  style=" margin : 0px; padding : 2px">
 
                 <!--Login fields-->
-                <form #loginForm="ngForm"  (ngSubmit)="OnSubmit(UserName.value,Password.value)">
-                <div class="card-content" >
+                <form #loginForm="ngForm"  (ngSubmit)="getLogindetails(UserName.value,Password.value)">
+                <div class="card-content">
                     <div class="row center-align">
                         <span class="card-title grey-text text-darken-4 center-align">Sign In</span>
 
@@ -55,7 +55,7 @@
                             </label>
                         </div>
                     </div>
-                   <button  type="submit" [disabled]="!loginForm.valid" class="waves-effect waves-light btn">LogIn <i class="material-icons right">send</i>
+                   <button  type="submit"  class="waves-effect waves-light btn">LogIn <i class="material-icons right">send</i>
                    </button>
                   
                 </div>
@@ -63,3 +63,4 @@
                 </div>
                 </div>
                 </div>
+                
